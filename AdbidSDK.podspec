@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = "AdbidSDK"
-  spec.version      = "0.1.9"
+  spec.version      = "0.1.10"
   spec.summary      = "Adbid广告SDK"
   spec.description  = <<-DESC
                     Adbid广告SDK提供了广告展示和管理功能
@@ -17,7 +17,7 @@ Pod::Spec.new do |spec|
   # 指定不使用ARC的文件
   spec.requires_arc = true
   spec.subspec 'NoARC' do |noarc|
-    noarc.source_files = 'AdbidSDK/Core/Utility/LeadmoadBase64.{h,m}',"AdbidSDK/Core/Utility/LeadmoadBase64Defines.{h}"
+    noarc.source_files = 'AdbidSDK/Core/Utility/AdbidBase64.{h,m}',"AdbidSDK/Core/Utility/AdbidBase64Defines.{h}"
     noarc.requires_arc = false
   end
 end
