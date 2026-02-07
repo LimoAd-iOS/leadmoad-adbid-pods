@@ -48,8 +48,6 @@ typedef NS_ENUM(int, AdbidUserGender) {
 
 @property (nonatomic, copy) NSString * IDFA; //广告Id
 
-@property (nonatomic, copy) NSDictionary * caid; //caid 唯一识别码
-
 @property (nonatomic, assign) AdbidUserGender gender; //设置性别（Male表示男性，Female表示女性）
 
 @property (nonatomic, strong) AdCustomPermissionController *adCustomController;
