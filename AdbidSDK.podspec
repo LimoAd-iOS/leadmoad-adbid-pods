@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = "AdbidSDK"
-  spec.version      = "2.1.0.7"
+  spec.version      = "2.1.0.8"
   spec.summary      = "Adbid广告SDK"
   spec.description  = <<-DESC
                     Adbid广告SDK提供了广告展示和管理功能
@@ -11,6 +11,13 @@ Pod::Spec.new do |spec|
   spec.platform     = :ios, "13.0"
   spec.source       = { :git => "https://github.com/LimoAd-iOS/leadmoad-adbid-pods.git", :tag => "#{spec.version}" }
   spec.vendored_frameworks = "AdbidSDK.xcframework"
+  
+  spec.dependency 'AnyThinkiOS','6.5.41'
+  spec.dependency 'AnyThinkMediationGromoreAdapter','7.2.0.0.7'
+  spec.dependency 'AnyThinkMediationAdxSmartdigimktCNAdapter','6.5.41.0'
+  spec.dependency 'UBiXMerakSDK', '2.9.0.11'
+  spec.dependency 'LeadmoadAdSDK','1.0.9'
+   
   spec.swift_version = "5.0"
   spec.frameworks   = "UIKit", "Foundation"
   spec.requires_arc = true
