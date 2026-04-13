@@ -14,7 +14,7 @@
 		</data>
 		<key>Headers/AdbidInterstitialAd.h</key>
 		<data>
-		TGVjiV0c55cyiZYXKVVSJi9F8Vk=
+		ot9tz0Ck+xPXHfdK2TjwHQB3xFI=
 		</data>
 		<key>Headers/AdbidNativeAd.h</key>
 		<data>
@@ -26,7 +26,7 @@
 		</data>
 		<key>Headers/AdbidNativeObj.h</key>
 		<data>
-		ziUlVIwQW2r4CBJ6+OMT4nQRTY8=
+		FXeA/1WOzefZOE+qf4rzgDpT+dI=
 		</data>
 		<key>Headers/AdbidNativeView.h</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Headers/AdbidSplashAd.h</key>
 		<data>
-		IWqXWsHUXR9NUD4aPnX+0go7egk=
+		h1WQsykCf/7GWcQAE2LR6BKFSJc=
 		</data>
 		<key>Info.plist</key>
 		<data>
@@ -85,7 +85,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			DpPamn/wKwJS0VQjcairToX1hmBe3ERo4p4I+0g13qc=
+			TcM5REEiJcHnXT99gQ/sgGxWrROf/6LAbp0gpCdqMQY=
 			</data>
 		</dict>
 		<key>Headers/AdbidNativeAd.h</key>
@@ -106,7 +106,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			uoOAaeNExhl9PUTgh22ACSh6f6elkDMDiu6wsgwDanc=
+			dnH1NOpOUc0zQm/p/i25ztuAxsPgpRGxoPXt+Ae5Uo8=
 			</data>
 		</dict>
 		<key>Headers/AdbidNativeView.h</key>
@@ -155,7 +155,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			CcHihWgD6gjEZ0gjHzvlm7PxxcNeuSRI3uLVNCghxeg=
+			juKoKOaCZJpepy9DqRC14txWCSrwVE5IZAk6GvLBZn0=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
