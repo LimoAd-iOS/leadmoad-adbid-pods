@@ -49,6 +49,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, weak, readwrite) UIViewController *rootViewController;
 
+@property (nonatomic, assign) BOOL shouldMuted; //设置静音
 /**
  *  广告最大请求时长，单位毫秒。默认3000 , 最小500毫秒
  */
