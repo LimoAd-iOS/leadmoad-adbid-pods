@@ -11,7 +11,8 @@ Pod::Spec.new do |spec|
   spec.platform     = :ios, "13.0"
   spec.source       = { :git => "https://github.com/LimoAd-iOS/leadmoad-adbid-pods.git", :tag => "#{spec.version}" }
   spec.vendored_frameworks = "AdbidSDK.xcframework"
-  spec.dependency 'LeadmoadAdbidAdapter', '1.0.1'
+ 
+  spec.dependency 'LeadmoadAdSDK' , '~> 1.0'
   spec.swift_version = "5.0"
   spec.frameworks   = "UIKit", "Foundation"
   spec.requires_arc = true
