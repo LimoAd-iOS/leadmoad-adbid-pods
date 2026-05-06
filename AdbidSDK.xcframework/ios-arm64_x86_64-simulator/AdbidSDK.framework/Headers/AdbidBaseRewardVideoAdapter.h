@@ -7,8 +7,8 @@
 
 #import <Foundation/Foundation.h>
 #import <AdbidSDK/AdbidRewardVideoAdapterProtocol.h>
-NS_ASSUME_NONNULL_BEGIN
 
+NS_ASSUME_NONNULL_BEGIN
 @interface AdbidBaseRewardVideoAdapter : NSObject<AdbidRewardVideoAdapterProtocol>
 
 @property (nonatomic, weak) id<AdbidRewardVideoAdapterDelegate> adapterDelegate;
