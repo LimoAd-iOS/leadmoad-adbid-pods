@@ -55,6 +55,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSDictionary* LocalExtra; //设置本地数据用于激励
 
 - (instancetype)initWithSlotId:(NSString *)slotId;
+
+- (NSString*)getRequestId;
+
 /// 发起拉取广告请求
 - (void)loadAd;
 

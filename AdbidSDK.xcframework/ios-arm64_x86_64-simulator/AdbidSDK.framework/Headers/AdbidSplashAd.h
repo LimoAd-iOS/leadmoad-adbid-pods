@@ -44,6 +44,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, nullable) UIViewController *viewController;// 落地页设置
 
 - (instancetype)initWithSlotId:(NSString *)slotId;
+
+- (NSString*)getRequestId;
+
 /// 发起拉取广告请求
 - (void)loadAd;
 /// 通过Token发起拉取广告请求

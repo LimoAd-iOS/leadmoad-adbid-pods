@@ -47,6 +47,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly) NSInteger eCPM;
 
 - (instancetype)initWithSlotId:(NSString *)slotId;
+
+- (NSString*)getRequestId;
+
 /// 发起拉取广告请求
 - (void)loadAd;
 /**
