@@ -42,6 +42,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign, readonly) bool isVideoAd;
 
 /**
+ 是否模版广告（YES 时调用方不再读 title/desc/iconUrl/imageAdInfo 等字段，
+ 调用 registerContainer 后由适配器把模版视图挂到 containerView 上）
+ */
+@property (nonatomic, assign) BOOL isExpressAd;
+
+/**
  广告是图片，该属性有值
  */
 @property (nonatomic, copy, readonly) AdbidNativeImageObj * imageAdInfo;

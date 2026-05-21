@@ -81,6 +81,16 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)registerContainer:(__kindof UIView *)containerView mainImageView:(__kindof UIImageView *) mainImageView
        withClickableViews:(NSArray<__kindof UIView *> *_Nullable)clickableViews;
 
+/**
+ 带额外配置的渲染（模版广告通过 extraConfig 透传 ADFrame / mediaViewFrame /
+ sizeToFit / adLogoFrame / adOptionsFrame / networkLogoFrame / videoPlayType）
+ 自渲染时 extraConfig 可为 nil，行为等同 3 参重载
+ */
+- (void)registerContainer:(__kindof UIView *)containerView
+            mainImageView:(__kindof UIImageView *)mainImageView
+       withClickableViews:(NSArray<__kindof UIView *> *_Nullable)clickableViews
+              extraConfig:(nullable NSDictionary *)extraConfig;
+
 - (void)winNotice:(NSInteger)price;
  
 - (void)lossNotice:(AdbidBidLossInfo *)info;

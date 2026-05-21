@@ -66,6 +66,26 @@ NS_ASSUME_NONNULL_BEGIN
 */
 - (void)registerContainer:(__kindof UIView *)containerView mainImageView:(__kindof UIImageView *) mainImageView
        withClickableViews:(NSArray<__kindof UIView *> *_Nullable)clickableViews;
+
+/**
+ 带额外配置的渲染（模版广告通过 extraConfig 透传 ADFrame / mediaViewFrame /
+ sizeToFit / adLogoFrame / adOptionsFrame / networkLogoFrame / videoPlayType）
+ 自渲染时 extraConfig 可为 nil，行为等同 3 参重载
+
+ extraConfig 已知 key：
+   - adFrame           NSValue<CGRect>   ATNativeADConfiguration.ADFrame
+   - mediaViewFrame    NSValue<CGRect>   ATNativeADConfiguration.mediaViewFrame
+   - sizeToFit         NSNumber<BOOL>    ATNativeADConfiguration.sizeToFit
+   - adLogoFrame       NSValue<CGRect>   context kATNativeAdConfigurationContextAdLogoViewFrameKey
+   - adOptionsFrame    NSValue<CGRect>   context kATNativeAdConfigurationContextAdOptionsViewFrameKey
+   - networkLogoFrame  NSValue<CGRect>   context kATNativeAdConfigurationContextNetworkLogoViewFrameKey
+   - videoPlayType     NSNumber<NSInt>   ATNativeADConfiguration.videoPlayType
+ */
+- (void)registerContainer:(__kindof UIView *)containerView
+            mainImageView:(__kindof UIImageView *)mainImageView
+       withClickableViews:(NSArray<__kindof UIView *> *_Nullable)clickableViews
+              extraConfig:(nullable NSDictionary *)extraConfig;
+
 //是否可以显示
 - (BOOL)isReady;
 
