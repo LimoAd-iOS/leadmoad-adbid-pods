@@ -65,8 +65,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 必须在主线程调用
 - (void)showAd:(UIViewController *)viewController;
-/// 竞胜/竞败上报
+/// price 二价（即竞败方最高价）
 - (void)winNotice:(NSInteger)price;
+/// info 竞胜方平台  竞胜方最高价
 - (void)lossNotice:(AdbidBidLossInfo *)info;
 ///是否准备好
 - (BOOL)isReady;
