@@ -9,7 +9,7 @@
 #import <AdbidSDK/adbidNativeObj.h>
 #import <UIKit/UIKit.h>
 #import <AdbidSDK/AdbidBidLossInfo.h>
-
+#import <AdbidSDK/AdbidAdInfoModel.h>
 NS_ASSUME_NONNULL_BEGIN
 
 @class AdbidNativeAd;
@@ -60,6 +60,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger maxLoadTime;
 
 @property (nonatomic, assign, readonly) NSInteger eCPM;
+
+// 广告信息
+@property (nonatomic, readonly) AdbidAdInfoModel* adInfo;
 
 - (instancetype)initWithSlotId:(NSString *)slotId;
 

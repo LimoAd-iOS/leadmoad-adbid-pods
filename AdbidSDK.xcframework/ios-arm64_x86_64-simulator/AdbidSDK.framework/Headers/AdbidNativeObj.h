@@ -48,6 +48,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) BOOL isExpressAd;
 
 /**
+ 视频是否由 adapter 接管渲染（YES 时 SDK 不在 AdbidNativeMediaView 上构造自己的播放器，
+ adapter 会通过 extraConfig[@"mediaView"] 拿到 AdbidNativeMediaView 并把自家 SDK 的播放视图嵌进去）
+ */
+@property (nonatomic, assign) BOOL externalMediaView;
+
+/**
  广告是图片，该属性有值
  */
 @property (nonatomic, copy, readonly) AdbidNativeImageObj * imageAdInfo;

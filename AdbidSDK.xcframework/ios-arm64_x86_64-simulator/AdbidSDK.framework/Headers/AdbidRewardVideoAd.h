@@ -7,6 +7,8 @@
 
 #import <Foundation/Foundation.h>
 #import <AdbidSDK/AdbidBidLossInfo.h>
+#import <AdbidSDK/AdbidAdInfoModel.h>
+
 #import <UIKit/UIKit.h>
 NS_ASSUME_NONNULL_BEGIN
 
@@ -49,6 +51,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger maxLoadTime;
 /// 返回广告的eCPM，单位：分
 @property (nonatomic, readonly) NSInteger eCPM;
+// 广告信息
+@property (nonatomic, readonly) AdbidAdInfoModel* adInfo;
 
 @property (nonatomic, assign) BOOL shouldMuted; //设置静音
 
