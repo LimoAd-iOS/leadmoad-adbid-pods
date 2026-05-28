@@ -27,6 +27,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy, readonly) NSString *iconUrl;
 
 /**
+ 广告图标图片
+ */
+@property (nonatomic, strong, nullable) UIImage *iconImage;
+
+/**
  广告logo
  */
 @property (nonatomic, copy) UIImage *logoImage;
