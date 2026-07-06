@@ -15,6 +15,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSString*)getSDKInfo;
 
++ (nullable NSDictionary *)serverBidTokenConfigForPositionId:(NSString *)positionId;
+
++ (void)requestServerBidTokenConfigForPositionId:(NSString *)positionId
+                                      completion:(void (^ _Nullable)(NSString *_Nullable config, NSError *_Nullable error))completion;
+
++ (NSDictionary *)allServerBidTokenConfigs;
+
 + (NSString*)sdkVersion;
 
 @end
