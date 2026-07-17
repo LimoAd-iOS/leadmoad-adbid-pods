@@ -60,12 +60,6 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)stop;
 
-/**
- 播放静音开关
- @param muted 是否静音
- */
-- (void)setMuted:(BOOL)muted;
-
 @end
 
 NS_ASSUME_NONNULL_END
