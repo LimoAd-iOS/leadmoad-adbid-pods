@@ -37,16 +37,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, weak) id<AdbidInterstitialAdDelegate> delegate;
 
 @property (nonatomic, strong, nullable) UIViewController *viewController;// 落地页设置
-
-// 广告最大请求时长，单位毫秒。默认3000 , 最小500毫秒
-@property (nonatomic, assign) NSInteger maxLoadTime;
-
-/// 是否静音，默认是静音
-@property (nonatomic, assign) BOOL shouldMuted;
-
 /// 返回广告的eCPM，单位：分
 @property (nonatomic, readonly) NSInteger eCPM;
-
 // 广告信息
 @property (nonatomic, readonly) AdbidAdInfoModel* adInfo;
 

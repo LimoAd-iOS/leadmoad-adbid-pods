@@ -46,15 +46,10 @@ NS_ASSUME_NONNULL_BEGIN
 @interface AdbidRewardVideoAd : NSObject
 
 @property (nonatomic, weak) id<AdbidRewardVideoAdDelegate> delegate;
-
-// 广告最大请求时长，单位毫秒。默认3000 , 最小500毫秒
-@property (nonatomic, assign) NSInteger maxLoadTime;
 /// 返回广告的eCPM，单位：分
 @property (nonatomic, readonly) NSInteger eCPM;
 // 广告信息
 @property (nonatomic, readonly) AdbidAdInfoModel* adInfo;
-
-@property (nonatomic, assign) BOOL shouldMuted; //设置静音
 
 @property (nonatomic, strong) NSDictionary* LocalExtra; //设置本地数据用于激励
 

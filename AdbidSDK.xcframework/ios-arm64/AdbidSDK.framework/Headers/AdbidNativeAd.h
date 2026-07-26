@@ -49,12 +49,8 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, weak, readwrite) UIViewController *rootViewController;
 
-@property (nonatomic, assign) BOOL shouldMuted; //设置静音
-
-/**
- *  广告最大请求时长，单位毫秒。默认3000 , 最小500毫秒
- */
-@property (nonatomic, assign) NSInteger maxLoadTime;
+/// 客户显式设置时覆盖渠道云端/SDK默认值；不设置则保留渠道默认值。
+@property (nonatomic, assign) BOOL shouldMuted;
 
 @property (nonatomic, assign, readonly) NSInteger eCPM;
 
@@ -89,6 +85,7 @@ NS_ASSUME_NONNULL_BEGIN
             mainImageView:(__kindof UIImageView *)mainImageView
        withClickableViews:(NSArray<__kindof UIView *> *_Nullable)clickableViews
               extraConfig:(nullable NSDictionary *)extraConfig;
+
 /**
  注册点击事件
  @param containerView 原生广告的容器视图。必传
@@ -101,9 +98,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)winNotice:(NSInteger)price;
 /// info 竞胜方平台  竞胜方最高价
 - (void)lossNotice:(AdbidBidLossInfo *)info;
-
 ///是否准备好，准备好了才能加载广告
 - (BOOL)isReady;
+
 @end
 
 NS_ASSUME_NONNULL_END
