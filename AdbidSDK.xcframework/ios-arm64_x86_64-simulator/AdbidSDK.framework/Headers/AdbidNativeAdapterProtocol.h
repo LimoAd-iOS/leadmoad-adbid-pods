@@ -18,6 +18,11 @@ NS_ASSUME_NONNULL_BEGIN
 /// data 素材
 /// resource 本地素材
 - (void)adapterDidLoadNativeAd:(id)adapter data:(NSDictionary*)data  localResource:(NSDictionary*)resource;
+/// 素材加载成功，并携带平台扩展数据
+- (void)adapterDidLoadNativeAd:(id)adapter
+                          data:(NSDictionary *)data
+                 localResource:(NSDictionary *)resource
+                         extra:(NSDictionary *)extra;
 /// 加载失败
 - (void)adapter:(id)adapter didFailToLoadNativeAdWithError:(NSError *)error;
 /// 展示成功
