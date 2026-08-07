@@ -54,6 +54,13 @@ NS_ASSUME_NONNULL_BEGIN
 
  /// 必须在主线程调用
 - (void)showAdToWindow:(UIWindow *)window;
+
+/**
+ * 展示开屏，并可附带底部品牌条。
+ * @param bottomView 品牌条视图；非空时广告占上方 4/5，底部 1/5 留给该 view。传 nil 等同 showAdToWindow:
+ */
+- (void)showAdToWindow:(UIWindow *)window bottomView:(nullable UIView *)bottomView;
+
 /// price 二价（即竞败方最高价）
 - (void)winNotice:(NSInteger)price;
 /// info 竞胜方平台  竞胜方最高价

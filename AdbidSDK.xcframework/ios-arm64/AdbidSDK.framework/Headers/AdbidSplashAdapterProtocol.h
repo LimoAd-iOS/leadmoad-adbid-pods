@@ -59,6 +59,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)showAdToWindow:(UIWindow *)window;
 
+- (void)showAdToWindow:(UIWindow *)window bottomView:(nullable UIView *)bottomView;
+
 /// 竞胜上报
 - (void)winNotice:(NSInteger)price;
 

@@ -63,7 +63,8 @@ typedef NS_ENUM(NSInteger, AdbidPlatform) {
     AdbidPlatform_FunLink = 17, //泛连
     AdbidPlatform_Ezviz = 18, //萤石
     AdbidPlatform_MS = 19, //美数
-    AdbidPlatform_Sigmob = 20
+    AdbidPlatform_Sigmob = 20,
+    AdbidPlatform_WM = 21
 };
 
 typedef NS_ENUM(NSInteger, AdbidType) {

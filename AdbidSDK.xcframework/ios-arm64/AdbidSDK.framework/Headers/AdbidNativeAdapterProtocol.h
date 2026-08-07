@@ -75,6 +75,7 @@ NS_ASSUME_NONNULL_BEGIN
 @optional
 /*
  * 带额外配置的注册方法。已知 extraConfig key：
+ *   - templateView   UIView*              模版广告的渲染容器，adapter/Taku 会将真实模版视图插入其中
  *   - mediaView      AdbidNativeMediaView*  App 持有的媒体视图,adapter 在视频广告时可把自家 SDK 的播放视图嵌进它
  *   - adFrame / mediaViewFrame / sizeToFit / adLogoFrame / adOptionsFrame / networkLogoFrame / videoPlayType
  *     模版广告专用,见 AdbidNativeAd.h 注释
