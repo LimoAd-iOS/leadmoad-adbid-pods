@@ -40,6 +40,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly) NSInteger eCPM;
 // 广告信息
 @property (nonatomic, readonly) AdbidAdInfoModel* adInfo;
+//广告素材
+@property (nonatomic, copy, readonly) NSDictionary *material;
 
 @property (nonatomic, strong, nullable) UIViewController *viewController;// 落地页设置
 

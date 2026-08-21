@@ -51,7 +51,9 @@ NS_ASSUME_NONNULL_BEGIN
 // 广告信息
 @property (nonatomic, readonly) AdbidAdInfoModel* adInfo;
 
-@property (nonatomic, strong) NSDictionary* LocalExtra; //设置本地数据用于激励
+@property (nonatomic, strong) NSDictionary* LocalExtra;
+
+@property (nonatomic, assign) BOOL shouldMuted;///是否静音，默认是非静音
 
 - (instancetype)initWithSlotId:(NSString *)slotId;
 
