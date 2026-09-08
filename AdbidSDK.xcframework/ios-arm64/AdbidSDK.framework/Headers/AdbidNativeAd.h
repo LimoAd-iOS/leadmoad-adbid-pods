@@ -67,23 +67,7 @@ NS_ASSUME_NONNULL_BEGIN
  * 通过Token加载信息流广告
  */
 - (void)loadAdWithToken:(NSString *)token;
-/**
- 带额外配置的渲染（模版广告通过 extraConfig 透传 templateView / ADFrame /
- mediaViewFrame / sizeToFit / adLogoFrame / adOptionsFrame / networkLogoFrame /
- videoPlayType）
- 自渲染时 extraConfig 可为 nil，行为等同 3 参重载
-
- extraConfig 已知 key：
-   - templateView     UIView*              模版广告的渲染容器，已挂载时保持原布局，未挂载时注册入口按容器大小兜底挂载，adapter/Taku 将真实模版视图插入其中
-   - mediaView        AdbidNativeMediaView* App 在注册前已完成布局的视频壳视图
-   - adFrame           NSValue<CGRect>   ATNativeADConfiguration.ADFrame
-   - mediaViewFrame    NSValue<CGRect>   ATNativeADConfiguration.mediaViewFrame
-   - sizeToFit         NSNumber<BOOL>    ATNativeADConfiguration.sizeToFit
-   - adLogoFrame       NSValue<CGRect>   context kATNativeAdConfigurationContextAdLogoViewFrameKey
-   - adOptionsFrame    NSValue<CGRect>   context kATNativeAdConfigurationContextAdOptionsViewFrameKey
-   - networkLogoFrame  NSValue<CGRect>   context kATNativeAdConfigurationContextNetworkLogoViewFrameKey
-   - videoPlayType     NSNumber<NSInt>   ATNativeADConfiguration.videoPlayType
- */
+ 
 - (void)registerContainer:(__kindof UIView *)containerView
             mainImageView:(__kindof UIImageView *)mainImageView
        withClickableViews:(NSArray<__kindof UIView *> *_Nullable)clickableViews
