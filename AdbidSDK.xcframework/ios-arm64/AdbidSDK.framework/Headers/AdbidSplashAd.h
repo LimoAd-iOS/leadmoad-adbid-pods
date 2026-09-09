@@ -8,6 +8,7 @@
 #import <Foundation/Foundation.h>
 #import <AdbidSDK/AdbidBidLossInfo.h>
 #import <AdbidSDK/AdbidAdInfoModel.h>
+#import <AdbidSDK/AdbidMaterialModel.h>
 
 #import <UIKit/UIKit.h>
 NS_ASSUME_NONNULL_BEGIN
@@ -36,14 +37,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, weak) id<AdbidSplashAdDelegate> delegate;
 
-/// 返回广告的eCPM，单位：分
+// 返回广告的eCPM，单位：分
 @property (nonatomic, readonly) NSInteger eCPM;
 // 广告信息
 @property (nonatomic, readonly) AdbidAdInfoModel* adInfo;
-//广告素材
+// 广告素材(兼容旧版本)
 @property (nonatomic, copy, readonly) NSDictionary *material;
-
-@property (nonatomic, strong, nullable) UIViewController *viewController;// 落地页设置
+// 广告素材模型
+@property (nonatomic, strong, readonly, nullable) AdbidMaterialModel *materialModel;
+// 设置落地页
+@property (nonatomic, strong, nullable) UIViewController *viewController;
 
 - (instancetype)initWithSlotId:(NSString *)slotId;
 
