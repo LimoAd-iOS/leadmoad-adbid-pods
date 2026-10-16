@@ -61,7 +61,6 @@ NS_ASSUME_NONNULL_BEGIN
 /// 加载广告
 - (void)loadAd;
 
-- (void)loadAdWithToken:(NSString *)token;
 /// 展示广告（主线程调用）
 - (void)showAd:(UIViewController *)viewController;
 
@@ -74,6 +73,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 //是否可以显示
 - (BOOL)isReady;
+
+@optional
+/// 通过 bidding token 加载。旧版 adapter 可不实现，聚合层会回落到 loadAd。
+- (void)loadAdWithToken:(NSString *)token;
 @end
 
 NS_ASSUME_NONNULL_END

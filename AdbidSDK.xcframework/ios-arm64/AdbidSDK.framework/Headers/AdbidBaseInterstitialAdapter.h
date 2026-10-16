@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) BOOL shouldMuted;///是否静音，默认是静音
 @property (nonatomic, copy, readonly) NSString *slotId;
 @property (nonatomic, copy, readonly) NSString* currentRequestId;
-@property (nonatomic, strong) UIViewController* viewController;
+@property (nonatomic, weak, nullable) UIViewController *viewController;
 - (instancetype)initWithSlotId:(NSString *)slotId requestId:(NSString*)requestId NS_DESIGNATED_INITIALIZER;
 - (void)updateCurrentRequestId:(NSString *)requestId;
 - (instancetype)init NS_UNAVAILABLE;

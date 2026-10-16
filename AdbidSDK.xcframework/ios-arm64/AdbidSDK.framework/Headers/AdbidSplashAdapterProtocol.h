@@ -44,15 +44,14 @@ NS_ASSUME_NONNULL_BEGIN
 /// 广告位ID（不同广告商的ID，如穿山甲的slotID、广点通的placementID）
 @property (nonatomic, copy, readonly) NSString *slotId;
 @property (nonatomic, copy, readonly) NSString* currentRequestId;
-@property (nonatomic, strong, nullable) UIViewController *viewController; //落地页显示控制器
+/// 落地页控制器。由聚合层在展示时传入，适配器不保留。
+@property (nonatomic, weak, nullable) UIViewController *viewController;
 
 /// 初始化方法
 - (instancetype)initWithSlotId:(NSString *)slotId;
 
 /// 加载广告
 - (void)loadAd;
-
-- (void)loadAdWithToken:(NSString *)token;
 
 /// 展示广告（主线程调用）
 - (void)showAd:(UIViewController *)viewController;
@@ -69,6 +68,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 //是否可以显示
 - (BOOL)isReady;
+
+@optional
+/// 通过 bidding token 加载。旧版 adapter 可不实现，聚合层会回落到 loadAd。
+- (void)loadAdWithToken:(NSString *)token;
 
 @end
 
