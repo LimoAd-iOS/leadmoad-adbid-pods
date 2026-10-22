@@ -45,8 +45,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy, readonly) NSDictionary *material;
 // 广告素材模型
 @property (nonatomic, strong, readonly, nullable) AdbidMaterialModel *materialModel;
-/// 落地页控制器。由调用方持有，SDK 不保留，避免和页面互相持有。
-@property (nonatomic, weak, nullable) UIViewController *viewController;
+// 设置落地页
+@property (nonatomic, strong, nullable) UIViewController *viewController;
 
 - (instancetype)initWithSlotId:(NSString *)slotId;
 
@@ -57,9 +57,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// 通过Token发起拉取广告请求
 - (void)loadAdWithToken:(NSString *)token;
 
-/// 已在主线程则直接展示；非主线程会切到主线程再展示。
+ /// 必须在主线程调用
 - (void)showAdToWindow:(UIWindow *)window;
-/// 已在主线程则直接展示；非主线程会切到主线程再展示。
+
 - (void)showAdToWindow:(UIWindow *)window bottomView:(UIView *)bottomView;
 /// price 二价（即竞败方最高价）
 - (void)winNotice:(NSInteger)price;

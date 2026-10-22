@@ -68,14 +68,13 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)loadAdWithToken:(NSString *)token;
  
-/// 已在主线程则直接注册展示；非主线程会切到主线程再注册。
 - (void)registerContainer:(__kindof UIView *)containerView
             mainImageView:(__kindof UIImageView *)mainImageView
        withClickableViews:(NSArray<__kindof UIView *> *_Nullable)clickableViews
               extraConfig:(nullable NSDictionary *)extraConfig;
 
 /**
- 注册点击事件。已在主线程则直接注册展示；非主线程会切到主线程再注册。
+ 注册点击事件
  @param containerView 原生广告的容器视图。必传
  @param mainImageView 原生广告的大图容器
  @param clickableViews 可点击的视图数组。可选
