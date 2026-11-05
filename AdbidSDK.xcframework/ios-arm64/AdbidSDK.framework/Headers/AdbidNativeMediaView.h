@@ -53,13 +53,6 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)stop __attribute__((deprecated("Do nothing now, it will work in a future version")));
 
-/**
- 是否循环播放。默认 NO，只播放一遍。
- 播完后回到第一帧，并回调 nativeMediaViewDidPlayFinished:。
- 设为 YES 后一直循环。需在 registerContainer 之前设置；播放开始后修改，从下一次播完生效。
- */
-@property (nonatomic, assign) BOOL videoLooped;
-
 @end
 
 NS_ASSUME_NONNULL_END
