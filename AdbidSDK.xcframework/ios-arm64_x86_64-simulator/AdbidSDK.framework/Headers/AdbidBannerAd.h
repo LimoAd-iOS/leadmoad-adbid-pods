@@ -9,6 +9,7 @@
 #import <AdbidSDK/AdbidBidLossInfo.h>
 #import <AdbidSDK/AdbidPublicDefine.h>
 #import <AdbidSDK/AdbidAdInfoModel.h>
+#import <AdbidSDK/AdbidMaterialModel.h>
 #import <UIKit/UIKit.h>
 NS_ASSUME_NONNULL_BEGIN
 
@@ -39,7 +40,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, weak) id<AdbidBannerAdDelegate> delegate;
 
-@property (nonatomic, strong, nullable) UIViewController *viewController;// 落地页设置
+/// 落地页控制器。由调用方持有，SDK 不保留，避免和页面互相持有。
+@property (nonatomic, weak, nullable) UIViewController *viewController;
 /// 渠道 Banner 视图。加载成功后可自行添加到页面；也可用 showBannerAdWithView: 填入宿主容器。
 @property (nonatomic, strong, readonly, nullable) UIView *bannerView;
 /// 是否显示关闭按钮。默认 YES，需在 loadAd 前设置。
@@ -48,12 +50,16 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger autoRefreshInterval;
 /// Banner 尺寸。CGSizeZero 使用渠道默认（屏宽 × 50pt）。需在 loadAd 前设置。
 @property (nonatomic, assign) CGSize adSize;
-/// 客户显式设置时覆盖渠道云端/SDK默认值；不设置则保留渠道默认值。默认 YES（静音）。
+/// 显式设置时写入渠道并覆盖其默认。未设置时不写入，实际播放保留渠道默认。
 @property (nonatomic, assign) BOOL shouldMuted;
 /// 返回广告的eCPM，单位：分
 @property (nonatomic, readonly) NSInteger eCPM;
 // 广告信息
 @property (nonatomic, readonly) AdbidAdInfoModel* adInfo;
+/// 广告素材。选出赢家后才赋值，字典和模型来自同一个渠道。
+@property (nonatomic, copy, readonly, nullable) NSDictionary *material;
+/// 广告素材模型。和 material 来自同一个赢家。
+@property (nonatomic, strong, readonly, nullable) AdbidMaterialModel *materialModel;
 
 
 - (instancetype)initWithSlotId:(NSString *)slotId;
@@ -67,7 +73,8 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)loadAdWithToken:(NSString *)token;
 /**
- * 将 Banner 展示到宿主传入的容器中。容器高度需为 50pt，且必须已经加到窗口上。必须在主线程调用。
+ * 将 Banner 展示到宿主传入的容器中。容器高度需为 50pt，且必须已经加到窗口上。
+ * 已在主线程则直接展示；非主线程会切到主线程再展示。
  */
 - (void)showBannerAdWithView:(UIView *)view;
 /**

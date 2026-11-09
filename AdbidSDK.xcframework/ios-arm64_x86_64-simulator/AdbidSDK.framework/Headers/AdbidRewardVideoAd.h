@@ -8,6 +8,7 @@
 #import <Foundation/Foundation.h>
 #import <AdbidSDK/AdbidBidLossInfo.h>
 #import <AdbidSDK/AdbidAdInfoModel.h>
+#import <AdbidSDK/AdbidMaterialModel.h>
 
 #import <UIKit/UIKit.h>
 NS_ASSUME_NONNULL_BEGIN
@@ -27,7 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)rewardVideoAdDidClick:(AdbidRewardVideoAd *)rewardVideoAd;
 
 /// 广告完成转化(关闭落地页)
-- (void)rewardVideoAdDidFinishConversion:(AdbidRewardVideoAd *)interstitialAd interactionType:(AdbidAdRedirectionType)interactionType;
+- (void)rewardVideoAdDidFinishConversion:(AdbidRewardVideoAd *)rewardVideoAd interactionType:(AdbidAdRedirectionType)interactionType;
 /// 开屏广告关闭
 - (void)rewardVideoAdDidClose:(AdbidRewardVideoAd *)rewardVideoAd;
 
@@ -50,10 +51,15 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly) NSInteger eCPM;
 // 广告信息
 @property (nonatomic, readonly) AdbidAdInfoModel* adInfo;
+/// 广告素材。选出赢家后才赋值，字典和模型来自同一个渠道。
+@property (nonatomic, copy, readonly, nullable) NSDictionary *material;
+/// 广告素材模型。和 material 来自同一个赢家。
+@property (nonatomic, strong, readonly, nullable) AdbidMaterialModel *materialModel;
 
 @property (nonatomic, strong) NSDictionary* LocalExtra;
 
-@property (nonatomic, assign) BOOL shouldMuted;///是否静音，默认是非静音
+/// 是否静音。未调用 setter 时不传给渠道，实际播放保留渠道默认。
+@property (nonatomic, assign) BOOL shouldMuted;
 
 - (instancetype)initWithSlotId:(NSString *)slotId;
 
@@ -64,7 +70,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)loadAdWithToken:(NSString *)token;
 
-/// 必须在主线程调用
+/// 已在主线程则直接展示；非主线程会切到主线程再展示。
 - (void)showAd:(UIViewController *)viewController;
 /// price 二价（即竞败方最高价）
 - (void)winNotice:(NSInteger)price;
