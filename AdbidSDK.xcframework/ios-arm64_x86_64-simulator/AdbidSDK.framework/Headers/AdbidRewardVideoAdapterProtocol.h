@@ -29,15 +29,15 @@ NS_ASSUME_NONNULL_BEGIN
 /// 广告关闭
 - (void)adapterDidCloseRewardVideoAd:(id)adapter;
 /// 广告完成转化(关闭落地页)
-- (void)adapterRewardedVideoAdDidFinishConversion:(id)interstitialAd interactionType:(int)interactionType;
+- (void)adapterRewardedVideoAdDidFinishConversion:(id)adapter interactionType:(int)interactionType;
 
 ///激励视频开始播放
-- (void)adapterRewardedVideoAdStartPlay:(id)rewardedVideoAd;
+- (void)adapterRewardedVideoAdStartPlay:(id)adapter;
 
  ///激励视频播放完成或者发生错误时回调
-- (void)adapterRewardedVideoAdDidPlayFinish:(id)rewardedVideoAd withError:(NSError *_Nullable)error;
+- (void)adapterRewardedVideoAdDidPlayFinish:(id)adapter withError:(NSError *_Nullable)error;
  ///视频广告播放达到激励条件回调
-- (void)adapterRewardVideoAdDidRewardEffective:(id)rewardedVideoAd;
+- (void)adapterRewardVideoAdDidRewardEffective:(id)adapter;
 
 @end
 
